@@ -6,8 +6,9 @@ const problems = {
   '-': subtraction
 };
 
-for (var i = 0; i<num; i++) {1
+for (var i = 1; i <= num; i++) {
   let p = document.createElement('p');
+  p.append(`${i}: `);
   p.append(problemtext());
   document.querySelector('section').appendChild(p);
 };
