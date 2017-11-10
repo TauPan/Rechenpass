@@ -23,3 +23,11 @@ function problem() {
   const operator2 = inverses[operation](solution, operator1);
   return `${operator1} ${operation} ${operator2} = ${solution}`
 }
+
+function add(a1, a2) {
+  return a1 + a2;
+}
+
+function subtract(s1, s2) {
+  return s1 - s2;
+}
