@@ -20,25 +20,26 @@ function problemtext() {
 
 function problem() {
   const operation = operators[Math.floor(Math.random() * operators.length)];
-  const solution = Math.floor(Math.random() * limit + 1);
-  const [operator1, operator2] = problems[operation](solution);
+  const [operator1, operator2, solution] = problems[operation]();
   return [operator1, operation, operator2, solution];
 }
 
-function addition(solution) {
+function addition() {
+  const solution = Math.floor(Math.random() * (limit - 1) + 2);
   const operator1 = addition_operator_1(solution);
   const operator2 = solution - operator1;
-  return [operator1, operator2];
+  return [operator1, operator2, solution];
 }
 
 function addition_operator_1(solution) {
   return Math.floor(Math.random() * (solution - 1) + 1);
 }
 
-function subtraction(solution) {
+function subtraction() {
+  const solution = Math.floor(Math.random() * limit);
   const operator1 = subtraction_operator_1(solution);
   const operator2 = operator1 - solution;
-  return [operator1, operator2];
+  return [operator1, operator2, solution];
 }
 
 function subtraction_operator_1(solution) {
