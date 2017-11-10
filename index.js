@@ -20,7 +20,7 @@ for (var i = 0; i<num; i++) {1
 function problem() {
   const solution = Math.floor(Math.random() * limit + 1);
   const operation = operators[Math.floor(Math.random() * operators.length)]
-  const operator1 = Math.floor(Math.random() * limit + 1);
+  const operator1 = Math.floor(Math.random() * solution + 1);
   const operator2 = inverses[operation](solution, operator1);
   return `${operator1} ${operation} ${operator2} = ${solution}`
 }
