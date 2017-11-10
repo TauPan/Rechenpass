@@ -1,15 +1,10 @@
 const num = 10;
 const limit = 20;
 const operators = ['+', '-']
-const operations = {
-  '+': add,
-  '-': subtract
-}
-
-const inverses = {
-  '+': subtract,
-  '-': add
-}
+const problems = {
+  '+': addition,
+  '-': subtraction
+};
 
 for (var i = 0; i<num; i++) {1
   let p = document.createElement('p');
@@ -18,17 +13,20 @@ for (var i = 0; i<num; i++) {1
 };
 
 function problem() {
+  const operation = operators[Math.floor(Math.random() * operators.length)];
   const solution = Math.floor(Math.random() * limit + 1);
-  const operation = operators[Math.floor(Math.random() * operators.length)]
+  const operator1, operator2 = problems[operator](solution);
+  return `${operator1} ${operation} ${operator2} = ${solution}`;
+}
+
+function addition(solution) {
   const operator1 = Math.floor(Math.random() * solution + 1);
-  const operator2 = inverses[operation](solution, operator1);
-  return `${operator1} ${operation} ${operator2} = ${solution}`
+  const operator2 = solution - operator1;
+  return operator1, operator2;
 }
 
-function add(a1, a2) {
-  return a1 + a2;
-}
-
-function subtract(s1, s2) {
-  return s1 - s2;
+function subtraction(solution) {
+  const operator1 = Math.floor(Math.random() * limit + 1);
+  const operator2 = operator1 - solution;
+  return operator1, operator2;
 }
