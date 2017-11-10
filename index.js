@@ -13,8 +13,8 @@ const inverses = {
 
 for (var i = 0; i++; i<num) {1
   const p = document.createElement('p');
-  p.innerHTML = problem();
-  document.querySelector('body').appendChild(p);
+  p.append(problem());
+  document.querySelector('section').appendChild(p);
 };
 
 function problem() {
