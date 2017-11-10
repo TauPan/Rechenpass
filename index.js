@@ -8,15 +8,20 @@ const problems = {
 
 for (var i = 0; i<num; i++) {1
   let p = document.createElement('p');
-  p.append(problem());
+  p.append(problemtext());
   document.querySelector('section').appendChild(p);
 };
 
+function problemtext() {
+  const [operator1, operation, operator2, solution] = problem();
+  return `${operator1} ${operation} ${operator2} = ${solution}`;
+}
+
 function problem() {
   const operation = operators[Math.floor(Math.random() * operators.length)];
-  const solution = Math.floor(Math.random() * limit + 1);
+  const solution = Math.floor(Math.random() * (limit + 1));
   const [operator1, operator2] = problems[operation](solution);
-  return `${operator1} ${operation} ${operator2} = ${solution}`;
+  return [operator1, operation, operator2, solution];
 }
 
 function addition(solution) {
