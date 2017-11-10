@@ -1,4 +1,4 @@
-const num = 10;
+const num = 20;
 const limit = 20;
 const operators = ['+', '-'];
 const problems = {
