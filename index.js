@@ -26,7 +26,7 @@ function addition(solution) {
 }
 
 function subtraction(solution) {
-  const operator1 = Math.floor(Math.random() * limit + 1);
+  const operator1 = Math.floor(Math.random() * (limit - solution) + solution);
   const operator2 = operator1 - solution;
   return [operator1, operator2];
 }
