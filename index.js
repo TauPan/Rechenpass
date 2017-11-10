@@ -11,8 +11,8 @@ const inverses = {
   '-': add
 }
 
-for (var i = 0; i++; i<num) {1
-  const p = document.createElement('p');
+for (var i = 0; i<num; i++) {1
+  let p = document.createElement('p');
   p.append(problem());
   document.querySelector('section').appendChild(p);
 };
