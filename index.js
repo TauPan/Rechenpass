@@ -7,7 +7,9 @@ const problems = {
 };
 
 for (var i = 1; i <= num; i++) {
-  document.querySelector('section').append(`<h3>${i}:</h3>`);
+  let h = document.createElement('h3');
+  h.append(`${i}:`);
+  document.querySelector('section').appendChild(h);
   let p = document.createElement('p');
   p.append(problemtext());
   document.querySelector('section').appendChild(p);
